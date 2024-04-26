@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   has_many :replies, class_name: 'Post', foreign_key: 'parent_id', dependent: :destroy
 
   # Validaciones
-  validates :title, presence: { message: "El título no puede estar en blanco. Por favor, ingresa un título para tu publicación." }
+  validates :title, presence: { message: "El título no puede estar en blanco. Por favor, ingrese un título para tu publicación." }
   validates :content, presence: { message: "El contenido no puede estar en blanco. Por favor, escribe algo en el contenido de tu publicación." }
   validates :user_id, presence: { message: "El ID del usuario no puede estar en blanco. Por favor, selecciona un usuario para asociar a esta publicación." }
   validates :answers_count, numericality: { greater_than_or_equal_to: 0, message: "El contador de respuestas debe ser igual o mayor que cero." }
